@@ -1,0 +1,110 @@
+@import '../../styles/styles.scss';
+
+h2 {
+  color: $primaryBold;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.signin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  
+  // .signin__container {
+  //   width: 100%;
+  //   height: 100%;
+  //   display: flex;
+  //   background-color: yellow;
+  //   margin: auto;
+    
+  // }
+}
+.signin__body {
+  width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 67px;
+  gap: 69px;
+}
+.signin__body__img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 139px;
+
+}
+.signin__body__img #logo {
+  width: 173.76px;
+  height: 36px;
+  margin-left: 30px;
+  line-height: 54.64px;
+}
+.signin__body__img #group {
+  width: 600px;
+  height: 337.57px;
+}
+form {
+  background-color: $primaryWhite;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 0 157px 0 100px;
+  box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+}
+.form__body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+    .form__body__heading p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 27.32px;
+      font-family: $fontFamily;
+      color: $primaryText;
+    }
+
+}
+.form__body__input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  input {
+    @include inputStyle();
+  }
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    label {
+      color: $primaryBackground;
+      font-weight: 600;
+      font-size: 12px;
+      line-break: 16px;
+      letter-spacing: 0.1em;
+      position: relative;
+      top: -31px;
+      right: 17.64px;
+      cursor: pointer;
+    }
+  }
+  button {
+    @include  buttonStyle();
+  }
+  p {
+    font-size: 12px;
+    color: $primaryBackground;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    line-height: 16px;
+  }
+}

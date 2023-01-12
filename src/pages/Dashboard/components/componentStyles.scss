@@ -1,0 +1,242 @@
+@import '../../../styles/styles.scss';
+
+.innerdrawer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 30px;
+  p {
+    font-size: 16px;
+    font-weight: 400px;
+    line-height: 18.77px;
+    color : rgba(33, 63, 125, 0.6);
+
+  }
+  img {
+    width: 16px;
+  }
+}
+.datacount {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px 30px ;
+  width: 240px;
+  background: #FFFFFF;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  img {
+    width: 40px;
+    height: 40px;
+  }
+  #text {
+    margin: 14px 0 12px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: $primaryText;
+  }
+  p {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: $primaryBold;
+  }
+}
+.databasehead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 124px;
+  p {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    color : $primaryText;
+  }
+}
+.content__database {
+  width: 100%;
+  height: 100%;
+  padding-bottom:266px;
+  .content__database__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 30px 0;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    .content__database__body {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 35px;
+    }
+  }
+ 
+}
+
+.content__database__flow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $primaryText;
+  margin-top: 20px;
+  .content__database__flow__left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      color: $primaryText;
+    }
+  }
+  span {
+    display:flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0px 6px;
+    background: rgba(33, 63, 125, 0.1);
+    border-radius: 4px;
+    #arrowup {
+      color: rgba(33, 63, 125, 0.5);
+      font-size: 30px;
+    }
+  }
+  .content__database__flow__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: rgba(33, 63, 125, 0.5);
+    .dropicon {
+      background-color: rgba(33, 63, 125, 0.1);
+      border-radius: 4px;
+      padding: 5px;
+      font-size: 30px;
+      color: rgba(33, 63, 125, 0.5);
+    }
+    #line {
+      color: $primaryBold;
+    }
+    #one {
+      color: $primaryBold;
+    }
+  }
+}
+
+
+.filter__form {
+  position: absolute;
+  width: 270px;
+  height: 660px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  gap: 20px;
+  span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    .filter__form__input {
+      border: 1px solid rgba(33,63,125,0.2);
+      border-radius: 8px;
+      padding: 12px 20px ;
+      outline: none;
+       svg.form__down {
+        position: relative;
+        background-color: blue;
+      }
+    }
+  }
+}
+//  hide calendar icon
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+input[type="date"]::-webkit-datetime-edit {
+  color: transparent;
+}
+input[type="date"] {
+  position: relative;
+}
+input[type="date"]::before {
+  content: attr(placeholder); /* Use the value of the placeholder attribute */
+  position: absolute;
+  left: 20px;
+  top: 13px;
+  color: $primaryText;
+}
+.form__icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  right: 40px;
+}
+svg.form__down {
+  font-size: 20px;
+
+}
+.filter__button {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.filter__form > .filter__button > button {
+  text-align: center;
+  border: none;
+  padding: 11px 30px 12px 20px;
+  border-radius: 8px;
+  border: 1px solid $primaryText;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: $primaryText;
+}
+#filter__button__filter {
+  background-color: $primaryBackground;
+  color: white;
+  border: 1px solid $primaryBackground;
+}
+
+
+
+.database__detail {
+  // width: 180px;
+  // height: 130px;
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 20px 43px 22px 20px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  cursor: pointer;
+}
+.database__detail > span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.database__detail > span > P,
+.database__detail > span > p > a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: $primaryText;
+}
+
+// .database__deatail > span > img {
+//   width:
+// }
