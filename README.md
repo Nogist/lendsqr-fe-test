@@ -11,10 +11,10 @@ This project is a code assessment for a frontend role in a software finance comp
 
 # Project Structure
 The project is structured in the following way:
-# src/: contains all the source code for the application
-# src/components/: contains all the React components for the application
-# src/styles/: contains all the variable SCSS styles for the application
-# src/assets/: contains all the images for the application
+1. src/: contains all the source code for the application
+2. src/components/: contains all the React components for the application
+3. src/styles/: contains all the variable SCSS styles for the application
+4. src/assets/: contains all the images for the application
 
 # Features Implemented
 1. Sign-in page: allows users to enter their email and password to log in to the app
@@ -22,8 +22,8 @@ The project is structured in the following way:
 3. User page: allows users to view and update their profile information
 
 # Technologies Used
-React: used for building the user interface
-TypeScript: used for adding static type checking to the JavaScript code
-SCSS: used for styling the application
-Axios: used for making API calls to fetch data
-React-icons: used for getting all icons.
+1. React: used for building the user interface
+2. TypeScript: used for adding static type checking to the JavaScript code
+3. SCSS: used for styling the application
+4. Axios: used for making API calls to fetch data
+5. React-icons: used for getting all icons.
