@@ -3,17 +3,22 @@ import './componentStyles.scss';
 // import { AiOutlineEye } from 'react-icons/ai';
 import oris from '../../../assets/oris.png';
 import activate from '../../../assets/activate.png';
-import person from '../../../assets/delete.png';
-import { Link } from 'react-router-dom';
+import person from '../../../assets/delete.png'
 
 
-const DatabaseDetail:React.FC = () => {
+
+interface Props {
+  handleClickuser: (user: any) => void;
+  item: any;
+}
+
+const DatabaseDetail: React.FC<Props> = (props) => {
   return (
     <div className='database__detail'>
       <span className=''>
         <img src={oris} alt="/" />
-        <p> 
-          <Link to='/user'>View Details</Link>
+        <p onClick={() => props.handleClickuser(props.item)}> 
+          View Details
         </p>
       </span>
       <span>

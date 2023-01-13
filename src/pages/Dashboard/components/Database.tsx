@@ -30,6 +30,7 @@ const Database:React.FC<Props> = (props) => {
   }, []);
 
   const [selectedUser, setSelectedUser] = useState<any | null>(null);
+  const [selectItem, setSelectItem] = useState<any | null>(null);
 
   let navigate = useNavigate();
   const handleClickuser = (user: any) => {
@@ -38,7 +39,12 @@ const Database:React.FC<Props> = (props) => {
       pathname: '/user',
       search: `?id=${user.id}`,
     });
-};
+  };
+
+  const handleSelect = (item: any) => {
+    setSelectItem(item);
+    selectDetail();
+  }
   
 
   return (
@@ -61,19 +67,19 @@ const Database:React.FC<Props> = (props) => {
                 <span> <p>{item.profile.phoneNumber}</p></span>
                 <span><p>May15, 2020 10:00 AM</p></span>
                 <span><p>Active</p></span>
-                <span id='api__map__dots'> <BsThreeDotsVertical onClick={handleClickuser.bind(this, item)} /></span>
-               
-                {/* onClick={selectDetail} */}
+                <span id='api__map__dots'> <BsThreeDotsVertical onClick={() => handleSelect(item)} /></span>
+            
+            
               </div>
             ))}
-          
-            {detail ? (
+              {detail ? (
             <div>
-              < DatabaseDetail /> 
+              <DatabaseDetail handleClickuser={handleClickuser} item={selectItem} />
             </div>):('')}
             {selectedUser && (
               <UserDetails userId={selectedUser.id}/>
           )}
+            
         </div>
       </div>
       <div className='content__database__flow'>
