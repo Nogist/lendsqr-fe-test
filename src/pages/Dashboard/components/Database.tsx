@@ -8,6 +8,7 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import UserDetails from '../../User/UserDetails';
 import { useNavigate } from 'react-router-dom';
+import Filter from '../../Dashboard/components/Filter';
 
 
 
@@ -29,6 +30,26 @@ const Database:React.FC<Props> = (props) => {
     });
   }, []);
 
+
+  //For filter component ,handling behaviour
+
+  const [filter, setFilter] = useState(false);
+  const [outsideClick, setOutsideClick] = useState(false);
+
+  const toggleFilter = () => {
+    setFilter(!filter);
+  }
+  const handleClickOutside = () => { 
+    setOutsideClick(!outsideClick)
+  };
+
+  useEffect(() => {
+    if (outsideClick) {
+      setFilter(false);
+    }
+  }, [outsideClick])
+
+  
   const [selectedUser, setSelectedUser] = useState<any | null>(null);
   const [selectItem, setSelectItem] = useState<any | null>(null);
 
@@ -51,35 +72,53 @@ const Database:React.FC<Props> = (props) => {
     <div className='content__database' >
       <div className='content__database__container'>
         <div className='content__database__body'>
-          <DatabaseHead text='ORGANIZATION' />
-          <DatabaseHead text='USERNAME' />
-          <DatabaseHead text='EMAIL' />
-          <DatabaseHead text='PHONE NUMBER' />
-          <DatabaseHead text='DATE JOINED' />
-          <DatabaseHead text='STATUS' />
+          <span onClick={toggleFilter}>
+            <DatabaseHead text='ORGANIZATION' />
+          </span>
+          <span onClick={toggleFilter}>
+            <DatabaseHead text='USERNAME' />
+          </span>
+          <span onClick={toggleFilter}>
+            <DatabaseHead text='EMAIL' />
+          </span>
+          <span onClick={toggleFilter}>
+            <DatabaseHead text='PHONE NUMBER' />
+          </span>
+          <span onClick={toggleFilter}>
+            <DatabaseHead text='DATE JOINED' />
+          </span>
+          <span onClick={toggleFilter}>
+            <DatabaseHead text='STATUS' />
+          </span>
+          {/* <span onClick={toggleFilter}>
+            <DatabaseHead text='ORGANIZATION' />
+          </span> */}
         </div>
+        {filter && (
+      <div onClick={handleClickOutside}>
+        <Filter />
+      </div>
+    )}
+
         <div className='content__database__content'>
-            {data.map((item, index) => (
-              <div  className='api__map'key={uuidv4()}>
-                <span><p>Lendsqr</p></span>
-                <span><p>{item.profile.firstName}  {item.profile.lastName}</p></span>
-                <span><p>{item.email}</p></span>
-                <span> <p>{item.profile.phoneNumber}</p></span>
-                <span><p>May15, 2020 10:00 AM</p></span>
-                <span><p>Active</p></span>
-                <span id='api__map__dots'> <BsThreeDotsVertical onClick={() => handleSelect(item)} /></span>
-            
-            
-              </div>
-            ))}
-              {detail ? (
+          {detail ? (
             <div>
               <DatabaseDetail handleClickuser={handleClickuser} item={selectItem} />
             </div>):('')}
             {selectedUser && (
               <UserDetails userId={selectedUser.id}/>
           )}
-            
+            {data.map((item, index) => (
+              <div  className='api__map'key={uuidv4()}>
+                <span><p>Lendsqr</p></span>
+                <span className='api__map__profile'><p>{item.profile.firstName}  {item.profile.lastName}</p></span>
+                <span className='api__map__profile'><p>{item.email}</p></span>
+                <span className='api__map__profile'> <p>{item.profile.phoneNumber}</p></span>
+                <span className='api__map__profile'><p>May15, 2020 10:00 AM</p></span>
+                <span className='api__map__profile' id='api__map__active'><p>Active</p></span>
+                <span id='api__map__dots'> <BsThreeDotsVertical onClick={() => handleSelect(item)} /></span>
+              </div>
+            ))}
         </div>
       </div>
       <div className='content__database__flow'>

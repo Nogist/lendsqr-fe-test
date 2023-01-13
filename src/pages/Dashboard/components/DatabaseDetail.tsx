@@ -14,21 +14,23 @@ interface Props {
 
 const DatabaseDetail: React.FC<Props> = (props) => {
   return (
-    <div className='database__detail'>
-      <span className=''>
-        <img src={oris} alt="/" />
-        <p onClick={() => props.handleClickuser(props.item)}> 
-          View Details
-        </p>
-      </span>
-      <span>
-        <img src={person} alt="/" />
-        <p>Backlist User</p>
-      </span>
-      <span>
-        <img src={activate} alt="/" />
-        <p>Activate User</p>
-      </span>
+    <div className='database__container' >
+      <div className='database__detail'>
+        <span className=''>
+          <img src={oris} alt="/" />
+          <p onClick={() => props.handleClickuser(props.item)}> 
+            View Details
+          </p>
+        </span>
+        <span>
+          <img src={person} alt="/" />
+          <p>Backlist User</p>
+        </span>
+        <span>
+          <img src={activate} alt="/" />
+          <p>Activate User</p>
+        </span>
+      </div>
     </div>
   )
 }
