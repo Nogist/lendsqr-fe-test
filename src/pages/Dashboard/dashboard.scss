@@ -146,9 +146,7 @@
 .dashboard__content {
   width: 100%;
   height: 100%;
-  display: flex;
-  padding: 60px 60px;
-  background: #FBFBFB;
+  padding: 60px 60px 0;
   .dashboard__content__body {
     width: 100%;
     height: 100%;
@@ -166,5 +164,52 @@
 
 .content__data {
   display: flex;
+  align-items: center;
   gap: 26px;
 }
+.content__database_content{
+  display: flex;
+  align-items: center;
+  background-color: yellow;
+  p {
+    background-color: cyan;
+  }
+}
+
+.content__database__content {
+  width: 100%;
+  padding-top: 12px;
+  .api__map {
+    width: 100%;
+    /* gap: 41px; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 0 23px;
+    display: flex;
+    border-bottom: 2px solid rgba(33, 63, 125, 0.1);
+
+    }
+
+  }
+  .api__map > span {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: $primaryText;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    // margin-left:30px
+  }
+  .api__map > span > p {
+    width: 100%;
+  }
+  #api__map__dots {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  // .api__map > svg {
+    
+  // }

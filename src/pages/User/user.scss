@@ -223,9 +223,9 @@
     padding-bottom: 30px;
     .userdetails__data__profile {
       display: flex;
-      align-items: center;
-      flex-wrap: wrap;
+      align-items: flex-start;
       gap: 100px;
+      
 
     }
   }
@@ -247,4 +247,7 @@
     line-height: 26px;
     color: $primaryBold;
   }
+}
+.userdetails__text {
+  margin-bottom: 30px;
 }

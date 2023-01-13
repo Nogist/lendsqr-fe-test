@@ -6,6 +6,7 @@ import avatar from '../../assets/avatar.png';
 import star from '../../assets/star.png';
 import stars from '../../assets/stars.png';
 import ImageFetcher from './components/ImageFetcher';
+import { Link } from 'react-router-dom';
 
 interface Profile {
     firstName: string;
@@ -65,10 +66,11 @@ const UserDetails: React.FC<{userId: number}> = ({userId}) => {
     <div className='userdetails'>
       <div className='userdetails__container'>
         <div className='userdetails__container__model'>
-          <span className='userdetails__container__model__header'>
+          <Link to ='/dashboard'
+            className='userdetails__container__model__header'>
             <BsArrowLeft id='arrow__left' />
             <p>Back to Users</p>
-          </span>
+          </Link>
           <span className='userdetails__container__model__user'>
             <p>User Details</p>
             <div>
@@ -117,15 +119,27 @@ const UserDetails: React.FC<{userId: number}> = ({userId}) => {
             <div className='userdetails__data__profile'>
               <span>
                 <p>Full Name</p>
-                {user ? (<h4>{user.profile.firstName}  {user.profile.lastName}</h4>): (<h4>Loading....</h4>)}
+                {user ? (<h4 className='userdetails__text'>{user.profile.firstName}  {user.profile.lastName}</h4>): (<h4>Loading....</h4>)}
+                <span>
+                  <p>MARITAL STATUS</p>
+                  <h4 >Single</h4>
+              </span>
               </span>
               <span>
                 <p>PHONE NUMBER</p>
-                {user ? (<h4>{user.phoneNumber} </h4>): (<h4>Loading....</h4>)}
+                {user ? (<h4 className='userdetails__text'>{user.phoneNumber} </h4>): (<h4>Loading....</h4>)}
+                <span>
+                  <p>CHILDREN</p>
+                  <h4>None</h4>
+              </span>
               </span>
               <span>
                 <p>EMAIL ADDRESS</p>
-                {user ? (<h4>{user.email} </h4>): (<h4>Loading....</h4>)}
+                {user ? (<h4 className='userdetails__text'>{user.email} </h4>): (<h4>Loading....</h4>)}
+                <span>
+                  <p>TYPE OF RESIDENCE</p>
+                  <h4>Parent's Apartment</h4>
+              </span>
               </span>
               <span>
                 <p>BVN</p>
@@ -137,18 +151,9 @@ const UserDetails: React.FC<{userId: number}> = ({userId}) => {
               </span>
             </div>
             <div className='userdetails__data__profile'>
-              <span>
-                <p>MARITAL STATUS</p>
-                <h4>Single</h4>
-              </span>
-              <span>
-                <p>CHILDREN</p>
-                <h4>None</h4>
-              </span>
-              <span>
-                <p>TYPE OF RESIDENCE</p>
-                <h4>Parent's Apartment</h4>
-              </span>
+              
+             
+             
             </div>
           </div>
           <div className='userdetails__data'>
@@ -156,15 +161,28 @@ const UserDetails: React.FC<{userId: number}> = ({userId}) => {
             <div className='userdetails__data__profile'>
               <span>
                 <p>LEVEL OF EDUCATION</p>
-                {user ? (<h4>{user.education.level} </h4>): (<h4>Loading....</h4>)}
+                {user ? (<h4 className='userdetails__text'>{user.education.level} </h4>): (<h4>Loading....</h4>)}
+                <span>
+                  <p>OFFICE EMAIL</p>
+                  {user ? (<h4>{user.education.officeEmail} </h4>): (<h4>Loading....</h4>)}
               </span>
+              </span>
+
               <span>
                 <p>EMPLOYMENT STATUS</p>
-                {user ? (<h4>{user.education.employmentStatus} </h4>): (<h4>Loading....</h4>)}
+                {user ? (<h4 className='userdetails__text'>{user.education.employmentStatus} </h4>): (<h4>Loading....</h4>)}
+                <span>
+                  <p>MONTHLY INCOME</p>
+                  {user ? (<h4>{user.education.monthlyIncome} </h4>): (<h4>Loading....</h4>)}
+              </span>
               </span>
               <span>
                 <p>SECTOR OF EMPLOYMENT</p>
-                {user ? (<h4>{user.education.sector} </h4>): (<h4>Loading....</h4>)}
+                {user ? (<h4 className='userdetails__text'>{user.education.sector} </h4>): (<h4>Loading....</h4>)}
+                <span>
+                  <p>LOAN REPAYMENT</p>
+                  {user ? (<h4>{user.education.loanRepayment} </h4>): (<h4>Loading....</h4>)}
+              </span>
               </span>
               <span>
                 <p>DURATION OF EMPLOYMENT</p>
@@ -172,18 +190,9 @@ const UserDetails: React.FC<{userId: number}> = ({userId}) => {
               </span>
             </div>
             <div className='userdetails__data__profile'>
-              <span>
-                <p>OFFICE EMAIL</p>
-                {user ? (<h4>{user.education.officeEmail} </h4>): (<h4>Loading....</h4>)}
-              </span>
-              <span>
-                <p>MONTHLY INCOME</p>
-                {user ? (<h4>{user.education.monthlyIncome} </h4>): (<h4>Loading....</h4>)}
-              </span>
-              <span>
-                <p>LOAN REPAYMENT</p>
-                {user ? (<h4>{user.education.loanRepayment} </h4>): (<h4>Loading....</h4>)}
-              </span>
+              
+              
+             
             </div>
           </div>
           <div className='userdetails__data'>
