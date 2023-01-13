@@ -58,23 +58,30 @@
 }
 .content__database {
   width: 100%;
-  height: 100%;
-  padding-bottom:266px;
+  height: 1037px;
+  padding-bottom: 266px;
   .content__database__container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 30px 30px 0;
+    padding: 30px 30px 0 15px;
     box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
     .content__database__body {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      gap: 35px;
+      align-items: flex-start;
+      width: 100%;
+      padding-left: 30px;
+      justify-content: space-between;
     }
+  
   }
  
+}
+.content__database__body > span {
+  width: 100%;
 }
 
 .content__database__flow {
@@ -128,9 +135,16 @@
   }
 }
 
-
+.filter__form__container {
+  position: absolute;
+  width: 270px;
+  height: 660px;
+  padding-right: 20px;
+}
 .filter__form {
   position: absolute;
+   top: 495px;
+  // left: calc(1440px - 200px);
   width: 270px;
   height: 660px;
   display: flex;
@@ -205,11 +219,20 @@ svg.form__down {
 }
 #filter__button__filter {
   background-color: $primaryBackground;
-  color: white;
+  color: rgb(212, 210, 210);
   border: 1px solid $primaryBackground;
 }
 
-
+.database__container {
+  position: absolute;
+  top: 650px;
+  left: calc(1440px - -15px);
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  align-items: flex-start;
+  
+}
 
 .database__detail {
   // width: 180px;
@@ -221,8 +244,12 @@ svg.form__down {
   gap: 20px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  cursor: pointer;
+  background: #FFFFFF;
+  // width: 180px;
+  // height: 130px;
+  // position: absolute;
+  // right: -90px;
+  // top: 90px;
 }
 .database__detail > span {
   display: flex;
